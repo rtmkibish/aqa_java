@@ -11,9 +11,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static org.testng.Assert.*;
 
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -30,16 +29,11 @@ public class LoginPageTest {
     private final String homepageUrl = "http://demo.guru99.com/Agile_Project/Agi_V1/customer/Customerhomepage.php";
     private final String invalidCredentialsErrorMessage = "User or Password is not valid";
 
-    @BeforeClass
+    @BeforeSuite
     public void chromeDriverSetUp() {
         // System.setProperty("webdriver.chrome.driver",
         // "/Users/akibish/Downloads/chromedriver");
         WebDriverManager.chromedriver().setup();
-    }
-
-    @AfterClass
-    public void browserTearDown() {
-        System.clearProperty("webdriver.chrome.driver");
     }
 
     @BeforeTest
