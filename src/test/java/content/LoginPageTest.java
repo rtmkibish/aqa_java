@@ -10,9 +10,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static org.testng.Assert.*;
-import org.testng.annotations.AfterSuite;
+
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -29,14 +30,14 @@ public class LoginPageTest {
     private final String homepageUrl = "http://demo.guru99.com/Agile_Project/Agi_V1/customer/Customerhomepage.php";
     private final String invalidCredentialsErrorMessage = "User or Password is not valid";
 
-    @BeforeSuite
+    @BeforeClass
     public void chromeDriverSetUp() {
         // System.setProperty("webdriver.chrome.driver",
         // "/Users/akibish/Downloads/chromedriver");
         WebDriverManager.chromedriver().setup();
     }
 
-    @AfterSuite
+    @AfterClass
     public void browserTearDown() {
         System.clearProperty("webdriver.chrome.driver");
     }
@@ -60,7 +61,7 @@ public class LoginPageTest {
 
         WebElement loginField = browser.findElement(loginFieldLocator);
         WebElement passwordField = browser.findElement(passwordFieldLocator);
-        WebElement submitButton = browser.findElement(submitButtonLoccator);
+        WebElement submitButton = browser.findElement(submitButtonLocator);
 
         String userId = getValidUserId();
         String userPassword = getValidUserPassword();
@@ -80,7 +81,7 @@ public class LoginPageTest {
 
         WebElement loginField = browser.findElement(loginFieldLocator);
         WebElement passwordField = browser.findElement(passwordFieldLocator);
-        WebElement submitButton = browser.findElement(submitButtonLoccator);
+        WebElement submitButton = browser.findElement(submitButtonLocator);
 
         String invalidUserId = getInvalidUserId();
         String validUserPassword = getValidUserPassword();
@@ -103,7 +104,7 @@ public class LoginPageTest {
 
         WebElement loginField = browser.findElement(loginFieldLocator);
         WebElement passwordField = browser.findElement(passwordFieldLocator);
-        WebElement submitButton = browser.findElement(submitButtonLoccator);
+        WebElement submitButton = browser.findElement(submitButtonLocator);
 
         String validUserId = getValidUserId();
         String invalidUserPassword = getInvalidUserPassword();
@@ -126,7 +127,7 @@ public class LoginPageTest {
 
         WebElement loginField = browser.findElement(loginFieldLocator);
         WebElement passwordField = browser.findElement(passwordFieldLocator);
-        WebElement submitButton = browser.findElement(submitButtonLoccator);
+        WebElement submitButton = browser.findElement(submitButtonLocator);
 
         String invalidUserId = getInvalidUserId();
         String invalidUserPassword = getInvalidUserPassword();
@@ -149,7 +150,7 @@ public class LoginPageTest {
 
         WebElement loginField = browser.findElement(loginFieldLocator);
         WebElement passwordField = browser.findElement(passwordFieldLocator);
-        WebElement submitButton = browser.findElement(submitButtonLoccator);
+        WebElement submitButton = browser.findElement(submitButtonLocator);
 
         String validUserId = getValidUserId();
         String emptyUserPassword = "";
@@ -173,7 +174,7 @@ public class LoginPageTest {
 
         WebElement loginField = browser.findElement(loginFieldLocator);
         WebElement passwordField = browser.findElement(passwordFieldLocator);
-        WebElement submitButton = browser.findElement(submitButtonLoccator);
+        WebElement submitButton = browser.findElement(submitButtonLocator);
 
         String emptyUserId = "";
         String validUserPassword = getValidUserPassword();
@@ -196,7 +197,7 @@ public class LoginPageTest {
 
         WebElement loginField = browser.findElement(loginFieldLocator);
         WebElement passwordField = browser.findElement(passwordFieldLocator);
-        WebElement submitButton = browser.findElement(submitButtonLoccator);
+        WebElement submitButton = browser.findElement(submitButtonLocator);
 
         String emptyUserId = "";
         String emptyUserPassword = "";
